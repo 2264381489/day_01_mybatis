@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <!--配置环境-->
+    <environments default="mysql">
+        <environment id="mysql">
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/travel?characterEncoding=utf8&amp;useSSL=false&amp;serverTimezone=UTC&amp;rewriteBatchedStatements=true"/>
+                <property name="username" value="root"/>
+                <property name="password" value="aA107824"/>
+
+
+            </dataSource>
+        </environment>
+
+
+    </environments>
+<!--指定映射配置文件的位置,映射配置文件指的是每个dao独立的配置文件-->
+    <!--<mappers>-->
+        <!--<mapper resource="com/itheima/dao/UserDao.xml"/>-->
+    <!--</mappers>-->
+    <!--如果使用注解来配置，此处应该适用class属性制定北朱解的dao全限定类名-->
+    <mappers>
+        <mapper class="com.itheima.Dao.UserDao"/>
+    </mappers>
+
+</configuration>
